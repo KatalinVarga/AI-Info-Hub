@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+          :root {
+            --primary-color: #111f56;
+            --secondary-color: #dfdee8;
+            --accent-color: #E63946;
+            --light-bg:#f3f3f7;
+            --dark-bg: #343a40;
+            --text-color: #333;
+            --light-text: #111f56;
+            --light-blue:#00aeef;
+            --yellow:#ffd33d;
+            --pink:#e93290;
+           
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+          /* Footer styles */
+          footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--pink));
+            color: var(--color-light);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            padding: 20px 0;
+        }
+    
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--pink));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .quote{
+            padding-left: 50px;
+          
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .subpage-link1 {
+        color:white; /* Default text color - dark gray */
+        text-decoration: none; /* Removes the underline */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+        pointer-events: auto;
+        }
+        .subpage-link2 {
+        color:var(--pink); /* Default text color - dark gray */
+        text-decoration: none; /* Removes the underline */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+        pointer-events: auto;
+        }
+
+        .subpage-link1:hover {
+        color: #999999; /* Lighter color on hover */
+        text-decoration: none; /* Ensures no underline appears on hover */
+        pointer-events: auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        .card-row {
+            display: flex;
+            flex-wrap:nowrap;
+            justify-content:space-evenly;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            width: 18%;
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 5;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .card:nth-child(odd) {
+            background-color: purple;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            font-size: 18px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-left: 15px;
+            color: white;
+        }
+        
+        .card-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.4;
+        }
+           /* Custom list styles with square boxes instead of bullets */
+           ul.custom-bullets {
+        list-style: none;
+        padding-left: 0;
+        }
+
+        ul.custom-bullets li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        }
+
+        ul.custom-bullets li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        border: 2px solid var(--primary-color);
+        border-radius: 50%;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+       
+        
+        }
+                .ai-tips-container {
+        display: flex; /* Enables flexbox */
+        align-items: center; /* Aligns items vertically */
+        gap: 15px; /* Adds spacing between image and text */
+        }
+
+        .ai-tips-container img {
+        width: 30%; /* Adjust image size */
+        border-radius: 5px;
+        }
+
+        .ai-tips-container .text-block {
+        flex: 1; /* Allows text to take remaining space */
+        }
+
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .image-container {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+        
+        .text-block {
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 1000px) {
+            .image-row {
+                justify-content: center;
+            }
+            
+            .image-container {
+                flex-basis: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .image-container {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">AI Information Hub</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#limits">Limits</a></li>
+                    <li><a href="#101">Prompting</a></li>
+                    <li><a href="#examples">Examples</a></li>
+                </ul>
+            </nav>
+            
+           
+        </div>
+    </header>
+
+    <div class=hero>
+        <div class="container">
+        <h1>Image Generation</h1>
+        <p>Transform Imagination into Reality with AI-Generated Art</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Section 1 -->
+    <section class="section">
+        <h2 class="section-title" id="tools">A list of some well-known tools</h2>
+        
+        <!-- Row 1 -->
+        <div class="card-row">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://openai.com/index/dall-e-3" target="_blank" class="subpage-link1">Dalle-3 (ChatGPT) </a></h3>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://runwayml.com/" target="_blank" class="subpage-link1">
+                    Runway</a></h3>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://stability.ai" target="_blank" class="subpage-link1">
+                    Stable Diffusion</a>
+                </h3>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://www.midjourney.com/" target="_blank" class="subpage-link1">
+                    Midjourney </a>
+                </h3>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://haiper.ai/" target="_blank" class="subpage-link1">
+                    Haiper</a>
+                </h3>
+            </div>
+        </div>
+        
+        <!-- Row 2 -->
+        <div class="card-row">
+            <!-- Card 6 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://ai.meta.com/research/movie-gen/" target="_blank" class="subpage-link1" >Meta Movie Gen</a> </h3>
+            </div>
+            
+            <!-- Card 7 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://www.vidu.com/"target="_blank" class="subpage-link1" >
+                    Vidu </a></h3>
+            </div>
+            
+            <!-- Card 8 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://www.krea.ai" target="_blank" class="subpage-link1" >
+                    Krea</a>
+                </h3>
+            </div>
+            
+            <!-- Card 9 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://www.aiease.ai/" target="_blank" class="subpage-link1" >
+                    AI Ease</a>
+                </h3>
+            </div>
+            
+            <!-- Card 10 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://ideogram.ai" target="_blank" class="subpage-link1" >
+
+                    <strong>Ideogram</strong></a>
+                </h3>
+            </div>
+        </div>
+        
+        <!-- Row 3 -->
+        <div class="card-row">
+            <!-- Card 11 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://dreamina.capcut.com" target="_blank" class="subpage-link1" >
+
+                    Dreamina (Capcut)</a>
+                </h3>
+            </div>
+            
+            <!-- Card 12 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://leonardo.ai" target="_blank" class="subpage-link1" >
+                    Leonardo </a>
+
+                </h3>
+            </div>
+            
+            <!-- Card 13 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://letsenhance.io/" target="_blank" class="subpage-link1" >
+                    Let’s Enhance</a>
+                </h3>
+            </div>
+            
+            <!-- Card 14 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://www.flux.ai/" target="_blank" class="subpage-link1" >
+                    Flux</a>
+                </h3>
+            </div>
+            
+            <!-- Card 15 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://imageprompt.org/" target="_blank" class="subpage-link1" >
+                    ImagePrompt.org </a>
+                </h3>
+            </div>
+        </div>
+        
+        <!-- Row 4 -->
+        <div class="card-row">
+            <!-- Card 16 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://labs.google/fx/tools/image-fx" target="_blank" class="subpage-link1" >
+
+                    Google ImageFX </a>
+                </h3>
+            </div>
+            
+            <!-- Card 17 -->
+            <div class="card">
+                <h3 class="card-title"> <a href="https://deepdreamgenerator.com/" target="_blank" class="subpage-link1" >
+                    Google DeepDream</a>
+                </h3>
+            </div>
+            
+            <!-- Card 18 -->
+            <div class="card">
+                <h3 class="card-title"> <a href="https://www.bing.com/images/create" target="_blank" class="subpage-link1" >
+                    Bing Image Creator</a>
+                </h3>
+            </div>
+            
+            <!-- Card 19 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://firefly.adobe.com/" target="_blank" class="subpage-link1" >
+                  
+                    Adobe Firefly</a>
+                </h3>
+            </div>
+            
+            <!-- Card 20 -->
+            <div class="card">
+                <h3 class="card-title"><a href="https://labs.envato.com/image-gen?utm_source=elements&utm_medium=promos&utm_campaign=labs_elements-nav"target="_blank" class="subpage-link1" >
+                    Envato AI ImageGen</a>
+                </h3>
+            </div>
+        </div>
+    </section>
+        
+        <!-- Section 2 -->
+        <section class="section">
+            <h2 class="section-title" id="evolution">Algorithmic Visual Design</h2>
+            <div class="image-row">
+         
+                <div class="image-container">
+                   
+                    <div class="text-block">
+                        <!-- <h3>Image 2.1 Title</h3> -->
+                        <p>AI image generation has evolved significantly in recent years, 
+                            allowing users to create realistic or artistic visuals simply by providing text descriptions. 
+                            (Some AI models are multimodal, accepting images as prompts or a combination of text and images simultaneously.)</p>
+                    </div>
+                    <img src="/assets/img/evolution.png" alt="Evolution of AI image generation">  
+                </div>
+                
+            
+           
+                
+             
+            </div>
+        </section>
+        
+        <!-- Section 3 -->
+        <section class="section">
+            <h2 class="section-title" id="limits">Limitations of AI Visuals</h2>
+            <h3>Common Errors</h3>
+            <div class="image-row">
+                <!-- Image 1 -->
+                <div class="image-container">
+                    <img src="/assets/img/face lack of detail.jpg" alt="faceless face">
+                    <div class="text-block">
+                        <h3>Blurry images</h3>
+                        <p>Lack of detail, (e.g. lack of facial features), low resolution. 
+                        Resolution is usually better on paid subscription and most models allow enhancing pictures for extra credits.</p>
+                    </div>
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="image-container">
+                    <img src="/assets/img/fingers/fingers1.jpg" alt="Image 3.2">
+                    <div class="text-block">
+                        <h3>Anatomical Distortions</h3>
+                        <p> Extra teeth, fingers, nostrils, limbs, or misshapen limbs, missing limbs, missing iris, etc.; incorrect placement of body parts.</p>
+                    </div>
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="image-container">
+                    <img src="/assets/img/errors/merging2.jpg" alt="Image 3.3">
+                    <div class="text-block">
+                        <h3>Blending and Merging </h3>
+                        <p>Blending artifacts at object boundaries, color bleeding between objects, pattern bleeding between objects.</p>
+                    </div>
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="image-container">
+                    <img src="/assets/img/misaligned.jpg" alt="Image 3.4">
+                    <div class="text-block">
+                        <h3>Broken Physics </h3>
+                        <p>Perspective and spatial inconsistencies, wrong proportions for objects.
+                            Illogical object interactions and physics (e.g. gravitiy does not apply to an object and it hangs in the air). Background/foreground misalignment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="image-row">
+                  <!-- Image 5 -->
+                  <div class="image-container">
+                    <img src="/assets/img/reflections.jpg" alt="Image 3.4">
+                    <div class="text-block">
+                        <h3>Light and Shadow Distortions</h3>
+                        <p>Unrealistic lighting and shadows.Poor handling of reflections and transparency.
+                        </p>
+                    </div>
+                </div>
+            
+                 <!-- Image 6 -->
+                 <div class="image-container">
+                    <img src="/assets/img/errors/too_busy_too_symmetrical.jpg" alt="Image 3.4">
+                    <div class="text-block">
+                        <h3>Symmetry and Pattern Imbalance</h3>
+                        <p>AI images struggle with symmetry issues, creating either unnaturally perfect mirroring or chaotic element distribution. 
+                            This causes overcrowded compositions and artificial balance lacking natural variation. 
+                             Most models, however, cannot produce intentional seamless patterns when requested.
+                        </p>
+                    </div>
+                </div>
+           
+                 <!-- Image 7 -->
+                 <div class="image-container">
+                    <img src="/assets/img/errors/deepdream_second_head.jpg" alt="Image 3.4" >
+                    <div class="text-block">
+                        <h3>Hallucinations</h3>
+                        <p>Phantom elements like duplicate heads, unexpected additional characters, miniature versions of subjects, 
+                            or entirely unrequested objects appearing in the composition. Also: watermark and signature hallucinations.</p>
+                    </div>
+                </div>
+           
+          
+                <div class="image-container">
+                    <img src="/assets/img/watermark.jpg" alt="Image 5.4">
+                    <div class="text-block">
+                        <h3>Text rendering issues</h3>
+                        <p>AI image generators often fail at text rendering, 
+                            producing misspelled words, random characters, or illegible gibberish instead of coherent writing.<br>
+                        ( <a href="https://ideogram.ai/g/yLApH6iiThWrZKfF9fcpRw/2" target="_blank" class="subpage-link2" > <strong>Ideogram</strong></a> is good at rendering text on generated images.)</p>
+                    </div>
+                </div>
+                    
+                <div class="image-container">
+                    <img src="/assets/img/bearrabbit.png" alt="Image 3.4">
+                    <div class="text-block">
+                        <h3>Counting Errors</h3>
+                        <p>Some models struggle with object counts. For example, requests for a bear and a rabbit may result in extra animals or merged figures.
+                            Specifying a number of objects seldom results in the exact amount. (Also, some parts of your prompt may be ignored anyway.)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        
+        <!-- Section 4 -->
+        <section class="section">
+            <h2 class="section-title"></h2>
+            <div class="image-row">
+                <!-- Image 1 -->
+                <div class="image-container">
+                    <img src="/assets/img/errors_reel.png" alt="Image 4.1">
+                    <div class="text-block">
+                    </div>
+                </div>
+                
+           
+            </div>
+        </section>
+        
+        <!-- Section 5 -->
+        <section class="section" id="101">
+            <h2 class="section-title">Prompting 101</h2>
+            <div class="image-row">
+                <!-- Image 1 -->
+                <div class="image-container">
+                    <div class="text-block">
+                        <h2>Text-to-Image</h2>
+                        <ul class="custom-bullets">
+                            <li>Use detailed, descriptive language, mention the background elements, too (e.g., "A serene mountain lake at sunset with pink and orange clouds reflected in crystal clear water")</li>
+                            <li>Include multiple adjectives to convey mood and style preferences</li>
+                            <li>Specify artistic styles (like watercolor, pixel art) or artists (e.g., "in the style of Van Gogh")</li>
+                            <li>Include technical parameters (e.g., "8K resolution, photorealistic lighting")</li>
+                            <li>Use qualitative modifiers (e.g., "cinematic, dramatic, hyperdetailed")</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="image-container">
+                    <div class="text-block">
+                        <h2>Image (with text prompt)-to-image</h2>
+                        <ul class="custom-bullets">
+                            <li>Start with a reference image and describe desired modifications</li>
+                            <li>Specify elements to preserve and elements to change</li>
+                            <li>Avoid words/objects that the model struggles with (e.g. teeth)</li>
+                            <li>Use masking to isolate areas for targeted changes</li>
+                            <li>Use a conversational AI to help refine prompts for better results</li>
+                            <li>Test different prompts and refine based on the outcomes </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                 </div>
+                       
+         
+        </section>
+        <section class="section additional-tips">
+            <h2 class="section-title">Additional Prompting Tips</h2>
+            <div class="image-row">
+                <div class="image-container ai-tips-container">  <!-- Added a unique class -->
+                    <img src="/assets/img/AIgen/ai_prompt.jpg" alt="AI Prompt" style="width: 30%;border-radius: 5px;">
+                    <div class="text-block">
+                        <p>Try using free prompt generators such as 
+                            <a href="https://writingmate.ai/" class="subpage-link2" target="_blank"><strong>Writing Mate</strong></a> 
+                            or <a href="https://imageprompt.org/" class="subpage-link2" target="_blank"><strong>Image Prompt</strong></a>.<br>
+                            With Image Prompt, you can also reverse engineer a prompt based on an image. 
+
+                        </p>
+                    </div>
+                    <div class="text-block">
+                       <p>Example:<br>
+                        I have uploaded an image of a painting from <a href="https://unsplash.com/" target="_blank" class="subpage-link2">
+                            <strong> Unsplash.com</a></strong> to <a href="https://imageprompt.org/" class="subpage-link2" target="_blank"><strong>Image Prompt</strong></a>
+                             and used the generated prompt in <a href="https://labs.google/fx/tools/image-fx" class="subpage-link2" target="_blank"><strong>Google's Image FX.
+
+                             </strong></a>
+                    </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="section additional-tips">
+            <div class="image-row">
+                <div class="image-container">  
+                    <img src="/assets/img/AIgen/imageprompt.png" alt="AI Prompt" ">
+                  
+                    
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="section" id="examples">
+            <h3>Stylistic Exploration</h3>
+            <p>Craft prompts for infinite style variations.</p>
+            <div class="image-row">
+              
+                
+                <!-- Image 3 -->
+                <div class="image-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fxnmDroXmwY?si=Ql4_EXPCTB3RvkCe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                </div>
+                
+                
+            </div>
+        </section>
+        <section class="section">
+            <p>Explore a wide range of image styles with AI, using a reference image and text prompts for diverse results.</p>
+            <div class="image-row">
+                <!-- Image 1 -->
+                <div class="image-container">
+                    <img src="/assets/gifs/1f-ANIMATION.gif" alt="faceless face">
+                   
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="image-container">
+                    <img src="/assets/gifs/dd_meadow_1-ANIMATION.gif" alt="Image 3.2">
+                    
+                </div>
+                
+             
+            </div>
+        </section>
+        <section class="section">
+            <div class="image-row">
+              
+                
+                <!-- Image 3 -->
+                <div class="image-container">
+                    <img src="/assets/gifs/diffstyles_dd_7b-ANIMATION.gif" alt="Image 3.3">
+                    
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="image-container">
+                    <img src="/assets/gifs/gf1-ANIMATION.gif" alt="Image 3.4">
+                  
+                </div>
+            </div>
+        </section>
+
+ 
+    </div>
+    
+    <footer>
+        <div class="container" >
+          
+        </div>
+    </footer>
+</body>
+</html>
